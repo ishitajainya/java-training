@@ -1,0 +1,18 @@
+package com.lab_assignment_1;
+import java.util.Scanner;
+
+/* 
+Q2. Grades Average Calculator with Validation
+Requirements
+Prompt user for number of students.
+Collect grades into an int[].
+Each grade must be between 0 and 100.
+If invalid, print:
+*/
+public class Q2 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,42 @@
+package com.lab_assignment_1;
+import java.util.Scanner;
+/* 
+ Q2. Grades Average Calculator with Validation
+Requirements
+
+Prompt user for number of students.
+Collect grades into an int[].
+Each grade must be between 0 and 100.
+If invalid, print:
+Invalid grade. Try again.
+*/
+public class Q2 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter no. of students:");
+		int noOfStudents = sc.nextInt();
+		if(noOfStudents == 0) {
+			System.out.println("no. of students are 0, exiting.. ");
+			System.exit(0);
+		}
+		int grades[] = new int[noOfStudents];
+		int sum = 0;
+		System.out.println("Enter grade of each student : ");
+		for(int i = 0; i < noOfStudents; i++) {
+			int g = sc.nextInt();
+			if(g >= 0 && g <= 100) {
+				sum += g;
+				grades[i] = g;
+			}
+			else {
+				System.out.println("Invalid grade. Try again.");
+				i--;
+			}
+		}
+		int avg = sum / noOfStudents;
+		System.out.println("The average is : " + avg);
+		sc.close();
+	}
+
+}

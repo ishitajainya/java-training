@@ -1,0 +1,47 @@
+package com.lab_assignment_1;
+import java.util.Scanner;
+/* 
+Q3. Array Copy Method
+Task
+
+public static int[] copyOf(int[] array)
+Requirements
+
+Return a new independent array with the same values.
+Do not return the same reference.
+Demonstrate independence by modifying the copied array.
+Corner Cases
+
+Empty array → return new empty array
+Single-element array → return new array
+*/
+public class Q3 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter no. of students:");
+		int noOfStudents = sc.nextInt();
+		if(noOfStudents == 0) {
+			System.out.println("no. of students are 0, exiting.. ");
+			System.exit(0);
+		}
+		int grades[] = new int[noOfStudents];
+		int sum = 0;
+		System.out.println("Enter grade of each student : ");
+		for(int i = 0; i < noOfStudents; i++) {
+			int g = sc.nextInt();
+			if(g >= 0 && g <= 100) {
+				sum += g;
+				grades[i] = g;
+			}
+			else {
+				System.out.println("Invalid grade. Try again.");
+				i--;
+			}
+		}
+		int avg = sum / noOfStudents;
+		System.out.println("The average is : " + avg);
+		sc.close();
+	}
+
+}
