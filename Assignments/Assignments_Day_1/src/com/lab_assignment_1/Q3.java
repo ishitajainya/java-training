@@ -24,20 +24,21 @@ public class Q3 {
 		}
 		return copy;
 	}
+	public static void printArray(int[] array) {
+		int n = array.length;
+		for(int i = 0; i < n; i++) {
+			System.out.print(array[i] + " ");
+		}
+	}
 	public static void main(String[] args) {
 		int original[] = {10, 20, 8, 2, 1};
 		int copy[] = copyOf(original);
 		copy[1] = 30;
 		System.out.println("Original array :");
-		int n = original.length;
-		for(int i = 0; i < n; i++) {
-			System.out.print(original[i] + " ");
-		}
+		printArray(original);
 		System.out.println();
 		System.out.println("Copied array :");
-		for(int i = 0; i < n; i++) {
-			System.out.print(copy[i] + " ");
-		}
+		printArray(copy);
 	}
 
 }

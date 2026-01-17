@@ -25,6 +25,7 @@ public class Q4 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter no. of rows :  ");
 		int n = sc.nextInt();
 		int dp[][] = new int[n][];
 		dp[0] = new int[1];
@@ -36,12 +37,16 @@ public class Q4 {
 				dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
 			}
 		}
-		for(int i = 0; i < n; i++) {
-			for(int j = 0; j < dp[i].length; j++) {
-				System.out.print(dp[i][j] + " ");
-			}
-			System.out.println();
+		for (int i = 0; i < n; i++) {
+		    for (int s = 0; s < n - i - 1; s++) {
+		        System.out.print("  ");
+		    }
+		    for (int j = 0; j < dp[i].length; j++) {
+		        System.out.print(dp[i][j] + "   ");
+		    }
+		    System.out.println();
 		}
+
 		sc.close();
 	}
 
