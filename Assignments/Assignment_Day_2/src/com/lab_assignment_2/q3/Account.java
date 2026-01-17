@@ -1,4 +1,4 @@
-package q3;
+package com.lab_assignment_2.q3;
 
 
 class Account {

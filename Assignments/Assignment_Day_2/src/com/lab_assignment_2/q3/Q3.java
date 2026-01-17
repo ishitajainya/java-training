@@ -1,6 +1,6 @@
-package q3;
+package com.lab_assignment_2.q3;
 
-public class BankApp {
+public class Q3 {
 
     public static void main(String[] args) {
 

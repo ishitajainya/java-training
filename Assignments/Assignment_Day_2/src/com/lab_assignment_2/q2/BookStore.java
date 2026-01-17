@@ -28,27 +28,28 @@ public class BookStore {
     }
 
     public void order(String isbn, int orderCount) {
-        Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < count; i++) {
-            if (books[i].getISBN().equalsIgnoreCase(isbn)) {
-                books[i].setNumOfCopies(books[i].getNumOfCopies() + orderCount);
-                System.out.println("Ordered " + orderCount + " copies of existing book \"" + books[i].getBookTitle() + "\"");
-                return;
-            }
-        }
+        try (Scanner sc = new Scanner(System.in)) {
+			for (int i = 0; i < count; i++) {
+			    if (books[i].getISBN().equalsIgnoreCase(isbn)) {
+			        books[i].setNumOfCopies(books[i].getNumOfCopies() + orderCount);
+			        System.out.println("Ordered " + orderCount + " copies of existing book \"" + books[i].getBookTitle() + "\"");
+			        return;
+			    }
+			}
 
 
-        if (count < MAX_BOOKS) {
-            System.out.print("Enter title for new book: ");
-            String title = sc.nextLine();
-            System.out.print("Enter author for new book: ");
-            String author = sc.nextLine();
+			if (count < MAX_BOOKS) {
+			    System.out.print("Enter title for new book: ");
+			    String title = sc.nextLine();
+			    System.out.print("Enter author for new book: ");
+			    String author = sc.nextLine();
 
-            books[count++] = new Book(title, author, isbn, orderCount);
-            System.out.println("New book added: \"" + title + "\" with " + orderCount + " copies");
-        } else {
-            System.out.println("Book store full! Cannot add new book.");
-        }
+			    books[count++] = new Book(title, author, isbn, orderCount);
+			    System.out.println("New book added: \"" + title + "\" with " + orderCount + " copies");
+			} else {
+			    System.out.println("Book store full! Cannot add new book.");
+			}
+		}
     }
 
     public void display() {

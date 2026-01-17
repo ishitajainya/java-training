@@ -1,4 +1,4 @@
-package q3;
+package com.lab_assignment_2.q3;
 
 class CurrentAccount extends Account {
 
@@ -8,7 +8,7 @@ class CurrentAccount extends Account {
     public CurrentAccount(String name, int accountNumber, double accountBalance,
                           String tradeLicenseNumber, double overdraft) {
         super(name, accountNumber, accountBalance);
-        this.tradeLicenseNumber = tradeLicenseNumber;
+        this.setTradeLicenseNumber(tradeLicenseNumber);
         this.overdraft = overdraft;
     }
 
@@ -31,4 +31,12 @@ class CurrentAccount extends Account {
             System.out.println("Withdrawal exceeds overdraft limit.");
         }
     }
+
+	public String getTradeLicenseNumber() {
+		return tradeLicenseNumber;
+	}
+
+	public void setTradeLicenseNumber(String tradeLicenseNumber) {
+		this.tradeLicenseNumber = tradeLicenseNumber;
+	}
 }
