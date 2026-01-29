@@ -15,7 +15,7 @@ public class BookStoreController {
             bookDao = new BookDaoJdbcImpl();
             BookService bookService = new BookService(bookDao);
 
-            // Insert at least 5 books 
+            // Insert 5 books 
             Book book1 = new Book("9780134685991", "Effective Java", "Joshua Bloch", 550.00);
             Book book2 = new Book("9780596009205", "Head First Java", "Kathy Sierra", 450.00);
             Book book3 = new Book("9780132350884", "Clean Code", "Robert C. Martin", 600.00);
